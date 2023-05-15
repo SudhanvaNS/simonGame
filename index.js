@@ -10,6 +10,7 @@ $(document).keypress(function(){
     }
 });
 
+
 function nextSequence(){
     $("#level-title").text("level "+level);
     randomNumber=Math.round(Math.random()*3);
@@ -37,19 +38,19 @@ function checkAnswer(currentLevel){
     }
     }else{
         $("h1").text("you lost game will restart in 3 seconds");
-        $(body).addClass("game-over");
+        $("body").addClass("game-over");
         gamePattern=[];
         userClickedPattern=[];
         level=1;
         setTimeout(() => {
-            $(body).removeClass("game-over");
-        }, 2000);
-        setTimeout(nextSequence,2000);
+            $("body").removeClass("game-over");
+        }, 3000);
+        setTimeout(nextSequence,4000);
     }
    
 }
 function playSound(name){
-    var name=new Audio(name+".mp3");
+    var name=new Audio("./sounds/" + name+".mp3");
     name.play();
 }
 function animatePress(currentColor){
